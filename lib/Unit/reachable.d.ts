@@ -3,5 +3,8 @@ import Unit from '@civ-clone/core-unit/Unit';
 export declare const terrainFor: (
   unit: Unit
 ) => ((tile: Tile) => boolean) | null;
-export declare const reachableTiles: (unit: Unit) => Set<Tile> | null;
+export declare const reachableTiles: (
+  unit: Unit,
+  turn?: number
+) => Set<Tile> | null;
 export default reachableTiles;
