@@ -38,7 +38,7 @@ export const pursue = (
     }
 
     if (reachable === undefined) {
-      reachable = reachableTiles(unit);
+      reachable = reachableTiles(unit, dependencies.turn.value());
     }
 
     // Out of reach: a search would cover everywhere the unit can go and find nothing.
