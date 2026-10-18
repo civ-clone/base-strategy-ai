@@ -16,6 +16,8 @@ export interface Knowledge {
     action: Action
   ): boolean;
   assignWorkers(dependencies: Dependencies, city: City): void;
+  defendersWanted(dependencies: Dependencies, city: City): number;
+  defendersKept(dependencies: Dependencies, city: City): number;
   isAircraft(dependencies: Dependencies, unit: Unit): boolean;
   martialLaw: MartialLawPolicy;
   shouldBuildCity(

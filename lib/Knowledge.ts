@@ -28,6 +28,12 @@ export interface Knowledge {
   ): boolean;
   // Arranges which tiles `city`'s citizens work.
   assignWorkers(dependencies: Dependencies, city: City): void;
+  // How many defenders `city` builds or buys up to (civ-clone/web-renderer#423). Civ1 wants more where a rival's unit
+  //  is close.
+  defendersWanted(dependencies: Dependencies, city: City): number;
+  // How many defenders `city` keeps fortified, and calls idle ones in to, at least as many as it builds. Civ1 keeps
+  //  more in the capital and where a rival's unit is close.
+  defendersKept(dependencies: Dependencies, city: City): number;
   // Whether `unit` is an aircraft, and so has to end its turns in a city or on a carrier.
   isAircraft(dependencies: Dependencies, unit: Unit): boolean;
   // How many units in a city martial law can use, and so how many the city wants in it.
