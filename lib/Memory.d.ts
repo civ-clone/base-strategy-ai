@@ -1,6 +1,5 @@
 import City from '@civ-clone/core-city/City';
 import Path from '@civ-clone/core-world-path/Path';
-import Player from '@civ-clone/core-player/Player';
 import Tile from '@civ-clone/core-world/Tile';
 import Unit from '@civ-clone/core-unit/Unit';
 export type UncalmedReason = 'food' | 'growth' | 'tiles';
@@ -13,13 +12,8 @@ export interface TargetBoard {
   seaTilesToExplore: Tile[];
   undefendedCities: Tile[];
 }
-export interface PowerCache {
-  turn: number | null;
-  byPlayer: Map<Player, number>;
-}
 export interface Memory {
   lastUnitMoves: Map<Unit, Tile[]>;
-  power: PowerCache;
   surveyedTurn: number | null;
   targets: TargetBoard;
   uncalmedCities: Map<City, UncalmedReason>;
