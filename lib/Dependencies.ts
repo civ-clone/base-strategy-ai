@@ -64,6 +64,10 @@ import {
   instance as playerWorldRegistryInstance,
 } from '@civ-clone/core-player-world/PlayerWorldRegistry';
 import {
+  RequirementRegistry,
+  instance as requirementRegistryInstance,
+} from '@civ-clone/core-requirement/RequirementRegistry';
+import {
   RuleRegistry,
   instance as ruleRegistryInstance,
 } from '@civ-clone/core-rule/RuleRegistry';
@@ -130,6 +134,9 @@ export interface Dependencies {
   playerTreasuryRegistry: PlayerTreasuryRegistry;
   playerWorldRegistry: PlayerWorldRegistry;
   randomNumberGenerator: () => number;
+  // What the ruleset's things need and are made obsolete by (civ-clone/web-renderer#37), e.g. whether a Wonder still
+  //  does anything.
+  requirementRegistry: RequirementRegistry;
   ruleRegistry: RuleRegistry;
   specialistRegistry: SpecialistRegistry;
   strategyNoteRegistry: StrategyNoteRegistry;
@@ -164,6 +171,7 @@ export const createDependencies = (
   playerTreasuryRegistry: playerTreasuryRegistryInstance,
   playerWorldRegistry: playerWorldRegistryInstance,
   randomNumberGenerator: rngInstance,
+  requirementRegistry: requirementRegistryInstance,
   ruleRegistry: ruleRegistryInstance,
   specialistRegistry: specialistRegistryInstance,
   strategyNoteRegistry: strategyNoteRegistryInstance,
@@ -197,6 +205,7 @@ export const dependenciesFor = (game: Game): Dependencies =>
     playerTreasuryRegistry: game.playerTreasuries,
     playerWorldRegistry: game.playerWorlds,
     randomNumberGenerator: game.rng,
+    requirementRegistry: game.requirements,
     ruleRegistry: game.rules,
     specialistRegistry: game.specialists,
     strategyNoteRegistry: game.strategyNotes,

@@ -14,6 +14,7 @@ import { PlayerResearchRegistry } from '@civ-clone/core-science/PlayerResearchRe
 import { PlayerTradeRatesRegistry } from '@civ-clone/core-trade-rate/PlayerTradeRatesRegistry';
 import { PlayerTreasuryRegistry } from '@civ-clone/core-treasury/PlayerTreasuryRegistry';
 import { PlayerWorldRegistry } from '@civ-clone/core-player-world/PlayerWorldRegistry';
+import { RequirementRegistry } from '@civ-clone/core-requirement/RequirementRegistry';
 import { RuleRegistry } from '@civ-clone/core-rule/RuleRegistry';
 import { SpecialistRegistry } from '@civ-clone/core-city/SpecialistRegistry';
 import { StrategyNoteRegistry } from '@civ-clone/core-strategy/StrategyNoteRegistry';
@@ -45,6 +46,7 @@ export interface Dependencies {
   playerTreasuryRegistry: PlayerTreasuryRegistry;
   playerWorldRegistry: PlayerWorldRegistry;
   randomNumberGenerator: () => number;
+  requirementRegistry: RequirementRegistry;
   ruleRegistry: RuleRegistry;
   specialistRegistry: SpecialistRegistry;
   strategyNoteRegistry: StrategyNoteRegistry;
